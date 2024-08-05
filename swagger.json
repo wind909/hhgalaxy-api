@@ -295,11 +295,6 @@
             "example" : "123e4567-e89b-12d3-a456-426614174000",
             "description" : "訂單編號"
           },
-          "customer_name" : {
-            "type" : "string",
-            "example" : "John Doe",
-            "description" : "顧客名稱"
-          },
           "recipient" : {
             "type" : "string",
             "example" : "Jane Doe",
@@ -1422,16 +1417,6 @@
                     "example" : "123e4567-e89b-12d3-a456-426614174000",
                     "description" : "訂單編號"
                   },
-                  "datas[0][customer_code]" : {
-                    "type" : "string",
-                    "example" : "123e4567-e89b-12d3-a456-426614174000",
-                    "description" : "客戶代碼"
-                  },
-                  "datas[0][customer_name]" : {
-                    "type" : "string",
-                    "example" : "John Doe",
-                    "description" : "客戶名稱"
-                  },
                   "datas[0][recipient]" : {
                     "type" : "string",
                     "example" : "Jane Doe",
@@ -1569,7 +1554,6 @@
                   "datas[0][product_name]" : "Sample Item",
                   "datas[0][quantity]" : 1,
                   "datas[0][order_no]" : "123e4567-e89b-12d3-a456-426614174000",
-                  "datas[0][customer_name]" : "John Doe",
                   "datas[0][recipient]" : "Jane Doe",
                   "datas[0][recipient_address]" : "123 Main St, Anytown",
                   "datas[0][recipient_phone]" : "123-456-7890",
