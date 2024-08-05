@@ -1467,11 +1467,6 @@
                     "example" : "B01082",
                     "description" : "客戶代碼"
                   },
-                  "datas[0][is_cvs]" : {
-                    "type" : "boolean",
-                    "example" : true,
-                    "description" : "是否 CVS"
-                  },
                   "datas[0][custom_column_1]" : {
                     "type" : "string",
                     "example" : "Custom 1",
@@ -1569,7 +1564,6 @@
                   "datas[0][update_datetime]" : "20240312",
                   "datas[0][ship_by_date]" : "20240312",
                   "datas[0][expiration_date]" : "20240312",
-                  "datas[0][order_number]" : "123e4567-e89b-12d3-a456-426614174000",
                   "datas[0][trans_amount]" : 123.45,
                   "datas[0][product_code]" : "9781234567890",
                   "datas[0][item_title]" : "Sample Item",
