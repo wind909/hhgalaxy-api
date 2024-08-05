@@ -256,17 +256,17 @@
           "update_datetime" : {
             "type" : "string",
             "example" : "20240312",
-            "description" : "更新日期，格式為Ymd"
+            "description" : "訂單更新日期，格式為YYYYmmdd"
           },
           "ship_by_date" : {
             "type" : "string",
             "example" : "20240312",
-            "description" : "發貨日期，格式為Ymd"
+            "description" : "指定到貨日期，格式為YYYYmmdd"
           },
           "expiration_date" : {
             "type" : "string",
             "example" : "20240312",
-            "description" : "有效日期，格式為Ymd"
+            "description" : "商品有效日期，格式為YYYYmmdd"
           },
           "trans_amount" : {
             "type" : "number",
@@ -274,12 +274,12 @@
             "example" : 123.45,
             "description" : "交易金額"
           },
-          "product_code" : {
+          "product_no" : {
             "type" : "string",
             "example" : "9781234567890",
-            "description" : "產品代碼"
+            "description" : "產品貨號"
           },
-          "item_title" : {
+          "product_name" : {
             "type" : "string",
             "example" : "Sample Item",
             "description" : "產品名稱"
@@ -290,10 +290,10 @@
             "description" : "數量",
             "minimum" : 1
           },
-          "order_number" : {
+          "order_no" : {
             "type" : "string",
             "example" : "123e4567-e89b-12d3-a456-426614174000",
-            "description" : "配送編號"
+            "description" : "訂單編號"
           },
           "customer_name" : {
             "type" : "string",
@@ -433,7 +433,7 @@
             "description" : "運費"
           }
         },
-        "required" : [ "order_number", "trans_amount", "product_code", "item_title", "quantity", "recipient", "recipient_address", "recipient_phone" ]
+        "required" : [ "order_no", "trans_amount", "product_no", "product_name", "quantity", "recipient", "recipient_address", "recipient_phone" ]
       },
       "StockData" : {
         "type" : "object",
@@ -1385,42 +1385,42 @@
                   "datas[0][update_datetime]" : {
                     "type" : "string",
                     "example" : "20240312",
-                    "description" : "更新日期"
+                    "description" : "訂單更新日期，格式為YYYYmmdd"
                   },
                   "datas[0][ship_by_date]" : {
                     "type" : "string",
                     "example" : "20240312",
-                    "description" : "發貨日期"
+                    "description" : "指定到貨日期，格式為YYYYmmdd"
                   },
                   "datas[0][expiration_date]" : {
                     "type" : "string",
                     "example" : "20240312",
-                    "description" : "到期日"
+                    "description" : "商品有效日期，格式為YYYYmmdd"
                   },
                   "datas[0][trans_amount]" : {
                     "type" : "number",
                     "example" : 123.45,
                     "description" : "交易金額"
                   },
-                  "datas[0][product_code]" : {
+                  "datas[0][product_no]" : {
                     "type" : "string",
                     "example" : "9781234567890",
-                    "description" : "產品代碼"
+                    "description" : "產品貨號"
                   },
-                  "datas[0][item_title]" : {
+                  "datas[0][product_name]" : {
                     "type" : "string",
                     "example" : "Sample Item",
-                    "description" : "商品標題"
+                    "description" : "產品名稱"
                   },
                   "datas[0][quantity]" : {
                     "type" : "integer",
                     "example" : 1,
                     "description" : "數量"
                   },
-                  "datas[0][order_number]" : {
+                  "datas[0][order_no]" : {
                     "type" : "string",
                     "example" : "123e4567-e89b-12d3-a456-426614174000",
-                    "description" : "配送編號"
+                    "description" : "訂單編號"
                   },
                   "datas[0][customer_code]" : {
                     "type" : "string",
@@ -1558,17 +1558,17 @@
                     "description" : "運費"
                   }
                 },
-                "required" : [ "file_name", "datas[0][item_title]", "datas[0][order_number]", "datas[0][product_code]", "datas[0][quantity]", "datas[0][recipient]", "datas[0][recipient_address]", "datas[0][recipient_phone]", "datas[0][trans_amount]" ],
+                "required" : [ "file_name", "datas[0][product_name]", "datas[0][order_no]", "datas[0][product_no]", "datas[0][quantity]", "datas[0][recipient]", "datas[0][recipient_address]", "datas[0][recipient_phone]", "datas[0][trans_amount]" ],
                 "example" : {
                   "file_name" : "通用-生活市集.xls",
                   "datas[0][update_datetime]" : "20240312",
                   "datas[0][ship_by_date]" : "20240312",
                   "datas[0][expiration_date]" : "20240312",
                   "datas[0][trans_amount]" : 123.45,
-                  "datas[0][product_code]" : "9781234567890",
-                  "datas[0][item_title]" : "Sample Item",
+                  "datas[0][product_no]" : "9781234567890",
+                  "datas[0][product_name]" : "Sample Item",
                   "datas[0][quantity]" : 1,
-                  "datas[0][order_number]" : "123e4567-e89b-12d3-a456-426614174000",
+                  "datas[0][order_no]" : "123e4567-e89b-12d3-a456-426614174000",
                   "datas[0][customer_name]" : "John Doe",
                   "datas[0][recipient]" : "Jane Doe",
                   "datas[0][recipient_address]" : "123 Main St, Anytown",
