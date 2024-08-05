@@ -268,11 +268,6 @@
             "example" : "20240312",
             "description" : "有效日期，格式為Ymd"
           },
-          "order_number" : {
-            "type" : "string",
-            "example" : "123e4567-e89b-12d3-a456-426614174000",
-            "description" : "訂單編號"
-          },
           "trans_amount" : {
             "type" : "number",
             "format" : "float",
@@ -1401,11 +1396,6 @@
                     "type" : "string",
                     "example" : "20240312",
                     "description" : "到期日"
-                  },
-                  "datas[0][order_number]" : {
-                    "type" : "string",
-                    "example" : "123e4567-e89b-12d3-a456-426614174000",
-                    "description" : "訂單號"
                   },
                   "datas[0][trans_amount]" : {
                     "type" : "number",
