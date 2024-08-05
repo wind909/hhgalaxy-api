@@ -204,30 +204,33 @@
           "order_no" : {
             "type" : "string",
             "nullable" : true,
-            "description" : "當status為return_apply或returning時為必填"
+            "description" : "訂單編號，當 status 為 return_apply 或 returning 時為必填"
           },
           "return_tracking_no" : {
-            "type" : "string"
+            "type" : "string",
+            "description" : "逆物流託運單號"
           },
           "product_no" : {
-            "type" : "string"
+            "type" : "string",
+            "description" : "產品貨號"
           },
           "expiration" : {
             "type" : "string",
             "nullable" : true,
-            "description" : "當status為confirm_return時為必填且必須是數字"
+            "description" : "商品有效日期"
           },
           "count" : {
             "type" : "integer",
             "minimum" : 1,
-            "description" : "必須是整數且不能小於1"
+            "description" : "商品數量，必須是整數且不能小於1"
           },
           "price" : {
             "type" : "number",
             "nullable" : true,
-            "description" : "必須是數字"
+            "description" : "商品退貨金額，必須是數字"
           }
-        }
+        },
+        "required" : [ "product_no", "count" ]
       },
       "UpdateOrderStatusRequest" : {
         "type" : "object",
@@ -610,6 +613,63 @@
         "summary" : "新增訂單退貨",
         "requestBody" : {
           "content" : {
+            "application/x-www-form-urlencoded" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "status" : {
+                    "type" : "string",
+                    "example" : "confirm_return",
+                    "enum" : [ "return_apply", "returning", "confirm_return" ],
+                    "description" : "退貨狀態"
+                  },
+                  "datas[0][order_no]" : {
+                    "type" : "string",
+                    "nullable" : true,
+                    "example" : "test_order_no_1",
+                    "description" : "訂單編號，當 status 為 return_apply 或 returning 時為必填"
+                  },
+                  "datas[0][return_tracking_no]" : {
+                    "type" : "string",
+                    "example" : "test_return_tracking_no",
+                    "description" : "逆物流託運單號"
+                  },
+                  "datas[0][product_no]" : {
+                    "type" : "string",
+                    "example" : "test_product_no_1",
+                    "description" : "產品貨號"
+                  },
+                  "datas[0][expiration]" : {
+                    "type" : "string",
+                    "nullable" : true,
+                    "example" : "200929029",
+                    "description" : "商品有效日期"
+                  },
+                  "datas[0][count]" : {
+                    "type" : "integer",
+                    "minimum" : 1,
+                    "example" : 1,
+                    "description" : "商品數量，必須是整數且不能小於1"
+                  },
+                  "datas[0][price]" : {
+                    "type" : "number",
+                    "nullable" : true,
+                    "example" : 199,
+                    "description" : "商品退貨金額，必須是數字"
+                  }
+                },
+                "required" : [ "status", "datas[0][product_no]", "datas[0][count]" ],
+                "example" : {
+                  "status" : "confirm_return",
+                  "datas[0][order_no]" : "test_order_no_1",
+                  "datas[0][return_tracking_no]" : "test_return_tracking_no",
+                  "datas[0][product_no]" : "test_product_no_1",
+                  "datas[0][expiration]" : "29999999",
+                  "datas[0][count]" : 1,
+                  "datas[0][price]" : 199
+                }
+              }
+            },
             "application/json" : {
               "schema" : {
                 "type" : "object",
@@ -632,21 +692,21 @@
                     "order_no" : "test_order_no_1",
                     "return_tracking_no" : "test_return_tracking_no",
                     "product_no" : "test_product_no_1",
-                    "expiration" : 200929029,
+                    "expiration" : "29999999",
                     "count" : 1,
                     "price" : 199
                   }, {
                     "order_no" : "test_order_no_2",
                     "return_tracking_no" : "test_return_tracking_no",
                     "product_no" : "test_product_no_2",
-                    "expiration" : 200929029,
+                    "expiration" : "29999999",
                     "count" : 1,
                     "price" : 2000
                   }, {
                     "order_no" : "test_order_no_2",
                     "return_tracking_no" : "test_return_tracking_no",
                     "product_no" : "test_product_no_3",
-                    "expiration" : 200929029,
+                    "expiration" : "29999999",
                     "count" : 1,
                     "price" : 2000
                   } ]
