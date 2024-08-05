@@ -290,7 +290,7 @@
             "description" : "數量",
             "minimum" : 1
           },
-          "delivery_number" : {
+          "order_number" : {
             "type" : "string",
             "example" : "123e4567-e89b-12d3-a456-426614174000",
             "description" : "配送編號"
@@ -433,7 +433,7 @@
             "description" : "運費"
           }
         },
-        "required" : [ "delivery_number", "trans_amount", "product_code", "item_title", "quantity", "recipient", "recipient_address", "recipient_phone" ]
+        "required" : [ "order_number", "trans_amount", "product_code", "item_title", "quantity", "recipient", "recipient_address", "recipient_phone" ]
       },
       "StockData" : {
         "type" : "object",
@@ -1417,7 +1417,7 @@
                     "example" : 1,
                     "description" : "數量"
                   },
-                  "datas[0][delivery_number]" : {
+                  "datas[0][order_number]" : {
                     "type" : "string",
                     "example" : "123e4567-e89b-12d3-a456-426614174000",
                     "description" : "配送編號"
@@ -1558,7 +1558,7 @@
                     "description" : "運費"
                   }
                 },
-                "required" : [ "file_name", "datas[0][item_title]", "datas[0][delivery_number]", "datas[0][product_code]", "datas[0][quantity]", "datas[0][recipient]", "datas[0][recipient_address]", "datas[0][recipient_phone]", "datas[0][trans_amount]" ],
+                "required" : [ "file_name", "datas[0][item_title]", "datas[0][order_number]", "datas[0][product_code]", "datas[0][quantity]", "datas[0][recipient]", "datas[0][recipient_address]", "datas[0][recipient_phone]", "datas[0][trans_amount]" ],
                 "example" : {
                   "file_name" : "通用-生活市集.xls",
                   "datas[0][update_datetime]" : "20240312",
@@ -1568,7 +1568,7 @@
                   "datas[0][product_code]" : "9781234567890",
                   "datas[0][item_title]" : "Sample Item",
                   "datas[0][quantity]" : 1,
-                  "datas[0][delivery_number]" : "123e4567-e89b-12d3-a456-426614174000",
+                  "datas[0][order_number]" : "123e4567-e89b-12d3-a456-426614174000",
                   "datas[0][customer_name]" : "John Doe",
                   "datas[0][recipient]" : "Jane Doe",
                   "datas[0][recipient_address]" : "123 Main St, Anytown",
