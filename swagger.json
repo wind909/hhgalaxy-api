@@ -443,7 +443,7 @@
             "description" : "運費"
           }
         },
-        "required" : [ "delivery_number", "trans_amount", "product_code", "item_title", "quantity", "customer_name", "recipient", "recipient_address", "recipient_phone", "original_item_sku" ]
+        "required" : [ "delivery_number", "trans_amount", "product_code", "item_title", "quantity", "recipient", "recipient_address", "recipient_phone", "original_item_sku" ]
       },
       "StockData" : {
         "type" : "object",
