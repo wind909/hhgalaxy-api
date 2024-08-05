@@ -443,7 +443,7 @@
             "description" : "運費"
           }
         },
-        "required" : [ "order_number", "trans_amount", "product_code", "item_title", "quantity", "customer_name", "recipient", "recipient_address", "recipient_phone", "original_item_sku" ]
+        "required" : [ "trans_amount", "product_code", "item_title", "quantity", "customer_name", "recipient", "recipient_address", "recipient_phone", "original_item_sku" ]
       },
       "StockData" : {
         "type" : "object",
@@ -1583,7 +1583,7 @@
                     "description" : "運費"
                   }
                 },
-                "required" : [ "file_name", "datas[0][customer_name]", "datas[0][item_title]", "datas[0][order_number]", "datas[0][original_item_sku]", "datas[0][product_code]", "datas[0][quantity]", "datas[0][recipient]", "datas[0][recipient_address]", "datas[0][recipient_phone]", "datas[0][trans_amount]" ],
+                "required" : [ "file_name", "datas[0][customer_name]", "datas[0][item_title]", "datas[0][original_item_sku]", "datas[0][product_code]", "datas[0][quantity]", "datas[0][recipient]", "datas[0][recipient_address]", "datas[0][recipient_phone]", "datas[0][trans_amount]" ],
                 "example" : {
                   "file_name" : "通用-生活市集.xls",
                   "datas[0][update_datetime]" : "20240312",
