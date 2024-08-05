@@ -1,0 +1,1650 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "轉單API",
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "description" : "SwaggerHub API Auto Mocking",
+    "url" : "https://virtserver.swaggerhub.com/luowenxun/hhg-api/1.0.0"
+  }, {
+    "url" : "https://test-oms-api.hhgalaxy.com"
+  }, {
+    "url" : "https://oms-api.hhgalaxy.com"
+  } ],
+  "components" : {
+    "securitySchemes" : {
+      "bearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer"
+      }
+    },
+    "schemas" : {
+      "ProductItem" : {
+        "type" : "object",
+        "properties" : {
+          "product_no" : {
+            "type" : "string",
+            "description" : "必填"
+          },
+          "digiwin_no" : {
+            "type" : "string",
+            "description" : "必填"
+          },
+          "product_type_name" : {
+            "type" : "string",
+            "enum" : [ "停售", "組合商品", "最新資訊", "舊規改版（不可混出）", "舊規改版（可混出）", "贈品採購" ],
+            "description" : "必須是上述枚舉值之一"
+          },
+          "old_product_no" : {
+            "type" : "string"
+          },
+          "product_name" : {
+            "type" : "string"
+          },
+          "expiration" : {
+            "type" : "string"
+          },
+          "unit" : {
+            "type" : "string"
+          },
+          "box_count" : {
+            "type" : "string"
+          },
+          "number_pages" : {
+            "type" : "string"
+          },
+          "weight" : {
+            "type" : "number",
+            "description" : "必須是數字"
+          },
+          "cover_price" : {
+            "type" : "number",
+            "description" : "必須是數字"
+          },
+          "sales_price" : {
+            "type" : "number",
+            "description" : "必須是數字"
+          },
+          "lowest_price" : {
+            "type" : "number",
+            "description" : "必須是數字"
+          },
+          "price" : {
+            "type" : "number",
+            "description" : "必須是數字"
+          },
+          "product_length" : {
+            "type" : "number",
+            "description" : "必須是數字"
+          },
+          "product_width" : {
+            "type" : "number",
+            "description" : "必須是數字"
+          },
+          "product_height" : {
+            "type" : "number",
+            "description" : "必須是數字"
+          },
+          "isbn" : {
+            "type" : "string"
+          },
+          "box_length" : {
+            "type" : "number",
+            "description" : "必須是數字"
+          },
+          "box_width" : {
+            "type" : "number",
+            "description" : "必須是數字"
+          },
+          "box_height" : {
+            "type" : "number",
+            "description" : "必須是數字"
+          },
+          "box_barcode" : {
+            "type" : "string"
+          },
+          "memo" : {
+            "type" : "string"
+          },
+          "old_digiwin_no" : {
+            "type" : "string"
+          },
+          "pare_product_no" : {
+            "type" : "string"
+          },
+          "pare_digiwin_no" : {
+            "type" : "string"
+          },
+          "pare_price" : {
+            "type" : "number",
+            "description" : "必須是數字"
+          },
+          "group_name" : {
+            "type" : "string"
+          },
+          "kind_1" : {
+            "type" : "string"
+          },
+          "kind_2" : {
+            "type" : "string"
+          },
+          "kind_3" : {
+            "type" : "string"
+          },
+          "kind_4" : {
+            "type" : "string"
+          },
+          "kind_5" : {
+            "type" : "string"
+          },
+          "kind_6" : {
+            "type" : "string"
+          },
+          "kind_7" : {
+            "type" : "string"
+          },
+          "kind_8" : {
+            "type" : "string"
+          },
+          "kind_9" : {
+            "type" : "string"
+          },
+          "kind_10" : {
+            "type" : "string"
+          },
+          "kind_11" : {
+            "type" : "string"
+          },
+          "kind_12" : {
+            "type" : "string"
+          },
+          "kind_13" : {
+            "type" : "string"
+          },
+          "kind_14" : {
+            "type" : "string"
+          },
+          "kind_15" : {
+            "type" : "string"
+          },
+          "kind_16" : {
+            "type" : "string"
+          },
+          "kind_17" : {
+            "type" : "string"
+          },
+          "kind_18" : {
+            "type" : "string"
+          },
+          "kind_19" : {
+            "type" : "string"
+          },
+          "kind_20" : {
+            "type" : "string"
+          },
+          "brand_no" : {
+            "type" : "string"
+          },
+          "brand_name" : {
+            "type" : "string"
+          },
+          "brand_provider_no" : {
+            "type" : "string"
+          },
+          "brand_provider" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "product_no", "digiwin_no" ]
+      },
+      "ReturnOrder" : {
+        "type" : "object",
+        "properties" : {
+          "order_no" : {
+            "type" : "string",
+            "nullable" : true,
+            "description" : "當status為return_apply或returning時為必填"
+          },
+          "return_tracking_no" : {
+            "type" : "string"
+          },
+          "product_no" : {
+            "type" : "string"
+          },
+          "expiration" : {
+            "type" : "string",
+            "nullable" : true,
+            "description" : "當status為confirm_return時為必填且必須是數字"
+          },
+          "count" : {
+            "type" : "integer",
+            "minimum" : 1,
+            "description" : "必須是整數且不能小於1"
+          },
+          "price" : {
+            "type" : "number",
+            "nullable" : true,
+            "description" : "必須是數字"
+          }
+        }
+      },
+      "UpdateOrderStatusRequest" : {
+        "type" : "object",
+        "properties" : {
+          "serial_no" : {
+            "type" : "string",
+            "description" : "訂單流水編號",
+            "example" : "HHGOR2406453175"
+          },
+          "status" : {
+            "type" : "string",
+            "description" : "訂單狀態，有以下狀態可使用:\n- `new_order` : 新訂單\n- `ready_to_ship_order` : 可出貨\n- `pending_order` : 保留訂單\n- `shipped_order` : 已出貨\n- `cancelled_order` : 已取消\n- `completed_order` : 匯入鼎新\n- `returning` : 退貨中\n- `confirm_return` : 確認退貨",
+            "enum" : [ "new_order", "ready_to_ship_order", "pending_order", "shipped_order", "cancelled_order", "completed_order", "returning", "confirm_return" ],
+            "example" : "shipped_order"
+          },
+          "order_transport_no" : {
+            "type" : "string",
+            "description" : "可出貨訂單轉為已出貨時為必填，整筆訂單為同一個託運單號"
+          }
+        },
+        "required" : [ "serial_no", "status" ]
+      },
+      "OrderItem" : {
+        "type" : "object",
+        "properties" : {
+          "update_datetime" : {
+            "type" : "string",
+            "example" : "20240312",
+            "description" : "更新日期，格式為Ymd"
+          },
+          "ship_by_date" : {
+            "type" : "string",
+            "example" : "20240312",
+            "description" : "發貨日期，格式為Ymd"
+          },
+          "expiration_date" : {
+            "type" : "string",
+            "example" : "20240312",
+            "description" : "有效日期，格式為Ymd"
+          },
+          "order_number" : {
+            "type" : "string",
+            "example" : "123e4567-e89b-12d3-a456-426614174000",
+            "description" : "訂單編號"
+          },
+          "trans_amount" : {
+            "type" : "number",
+            "format" : "float",
+            "example" : 123.45,
+            "description" : "交易金額"
+          },
+          "product_code" : {
+            "type" : "string",
+            "example" : "9781234567890",
+            "description" : "產品代碼"
+          },
+          "item_title" : {
+            "type" : "string",
+            "example" : "Sample Item",
+            "description" : "產品名稱"
+          },
+          "quantity" : {
+            "type" : "integer",
+            "example" : 1,
+            "description" : "數量",
+            "minimum" : 1
+          },
+          "delivery_number" : {
+            "type" : "string",
+            "example" : "123e4567-e89b-12d3-a456-426614174000",
+            "description" : "配送編號"
+          },
+          "customer_code" : {
+            "type" : "string",
+            "example" : "123e4567-e89b-12d3-a456-426614174000",
+            "description" : "顧客代碼"
+          },
+          "customer_name" : {
+            "type" : "string",
+            "example" : "John Doe",
+            "description" : "顧客名稱"
+          },
+          "recipient" : {
+            "type" : "string",
+            "example" : "Jane Doe",
+            "description" : "收件人"
+          },
+          "recipient_address" : {
+            "type" : "string",
+            "example" : "123 Main St, Anytown",
+            "description" : "收件地址"
+          },
+          "recipient_phone" : {
+            "type" : "string",
+            "example" : "123-456-7890",
+            "description" : "收件電話"
+          },
+          "payment_type" : {
+            "type" : "string",
+            "example" : "credit_card",
+            "description" : "付款方式"
+          },
+          "payment_amount" : {
+            "type" : "number",
+            "format" : "float",
+            "example" : 123.45,
+            "description" : "付款金額"
+          },
+          "memo" : {
+            "type" : "string",
+            "example" : "Sample Memo",
+            "description" : "備註"
+          },
+          "client_code" : {
+            "type" : "string",
+            "example" : "B01082",
+            "description" : "客戶代碼"
+          },
+          "original_item_sku" : {
+            "type" : "string",
+            "example" : "9781234567890",
+            "description" : "原始商品 SKU"
+          },
+          "is_cvs" : {
+            "type" : "boolean",
+            "example" : true,
+            "description" : "是否為 CVS"
+          },
+          "custom_column_1" : {
+            "type" : "string",
+            "example" : "Custom 1",
+            "description" : "自訂欄位 1"
+          },
+          "custom_column_2" : {
+            "type" : "string",
+            "example" : "Custom 2",
+            "description" : "自訂欄位 2"
+          },
+          "custom_column_3" : {
+            "type" : "string",
+            "example" : "Custom 3",
+            "description" : "自訂欄位 3"
+          },
+          "custom_column_4" : {
+            "type" : "string",
+            "example" : "Custom 4",
+            "description" : "自訂欄位 4"
+          },
+          "custom_column_5" : {
+            "type" : "string",
+            "example" : "Custom 5",
+            "description" : "自訂欄位 5"
+          },
+          "custom_column_6" : {
+            "type" : "string",
+            "example" : "Custom 6",
+            "description" : "自訂欄位 6"
+          },
+          "custom_column_7" : {
+            "type" : "string",
+            "example" : "Custom 7",
+            "description" : "自訂欄位 7"
+          },
+          "custom_column_8" : {
+            "type" : "string",
+            "example" : "Custom 8",
+            "description" : "自訂欄位 8"
+          },
+          "custom_column_9" : {
+            "type" : "string",
+            "example" : "Custom 9",
+            "description" : "自訂欄位 9"
+          },
+          "custom_column_10" : {
+            "type" : "string",
+            "example" : "Custom 10",
+            "description" : "自訂欄位 10"
+          },
+          "item_id" : {
+            "type" : "string",
+            "example" : "123e4567-e89b-12d3-a456-426614174000",
+            "description" : "商品 ID",
+            "minLength" : 36,
+            "maxLength" : 36
+          },
+          "item_cost" : {
+            "type" : "number",
+            "format" : "float",
+            "example" : 50,
+            "description" : "商品成本"
+          },
+          "item_pricesales" : {
+            "type" : "number",
+            "format" : "float",
+            "example" : 100,
+            "description" : "銷售價格"
+          },
+          "order_totalpayment" : {
+            "type" : "number",
+            "format" : "float",
+            "example" : 123.45,
+            "description" : "訂單總支付金額"
+          },
+          "user_id" : {
+            "type" : "string",
+            "example" : "123e4567-e89b-12d3-a456-426614174000",
+            "description" : "用戶 ID"
+          },
+          "virtual_contact_number" : {
+            "type" : "string",
+            "example" : "Virtual Contact Number",
+            "description" : "虛擬聯絡電話"
+          },
+          "package_query_number" : {
+            "type" : "string",
+            "example" : "Package Query Number",
+            "description" : "包裹查詢號碼"
+          },
+          "shipment_fee" : {
+            "type" : "number",
+            "format" : "float",
+            "example" : 10,
+            "description" : "運費"
+          }
+        },
+        "required" : [ "update_datetime", "order_number", "trans_amount", "product_code", "item_title", "quantity", "customer_code", "customer_name", "recipient", "recipient_address", "recipient_phone", "original_item_sku", "is_cvs", "item_id" ]
+      },
+      "StockData" : {
+        "type" : "object",
+        "properties" : {
+          "warehouse_no" : {
+            "type" : "string",
+            "example" : "VIRU",
+            "description" : "倉別代號",
+            "enum" : [ "A", "B", "C", "D", "FC", "FD", "FN", "FO", "FQ", "FU", "FZZZ", "N", "O", "OA", "OB", "Q", "R", "U", "Z", "ZZ", "DSN", "DSU", "DSC", "DSQ", "DSN", "VIRU", "VIRQ" ]
+          },
+          "product_no" : {
+            "type" : "string",
+            "example" : "706456451181",
+            "description" : "產品貨號"
+          },
+          "expiration" : {
+            "type" : "string",
+            "example" : "29990101",
+            "description" : "效期 (格式 YYYYMMDD)"
+          },
+          "product_name" : {
+            "type" : "string",
+            "example" : "A- SS SLM INSTT LG T Ck Black, S,",
+            "description" : "產品名稱"
+          },
+          "quantity" : {
+            "type" : "integer",
+            "example" : 100,
+            "description" : "數量"
+          },
+          "replace" : {
+            "type" : "boolean",
+            "example" : true,
+            "description" : "是否取代現有庫存"
+          }
+        },
+        "required" : [ "warehouse_no", "product_no", "expiration", "quantity", "replace" ]
+      }
+    }
+  },
+  "security" : [ {
+    "bearerAuth" : [ ]
+  } ],
+  "tags" : [ {
+    "name" : "轉單API"
+  } ],
+  "paths" : {
+    "/api/v1/product/update_item" : {
+      "post" : {
+        "tags" : [ "轉單API" ],
+        "summary" : "更新商品",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "supplier_slug" : {
+                    "type" : "string",
+                    "description" : "公司別",
+                    "enum" : [ "HHG105", "WEB" ],
+                    "example" : "HHG105"
+                  },
+                  "datas" : {
+                    "type" : "array",
+                    "items" : {
+                      "$ref" : "#/components/schemas/ProductItem"
+                    }
+                  }
+                },
+                "required" : [ "supplier_slug", "datas" ],
+                "example" : {
+                  "supplier_slug" : "HHG105",
+                  "datas" : [ {
+                    "product_no" : "test_product_no",
+                    "digiwin_no" : "test_digiwin_no",
+                    "product_type_name" : "最新資訊",
+                    "old_product_no" : "",
+                    "product_name" : "測試商品",
+                    "expiration" : "",
+                    "unit" : "",
+                    "box_count" : "",
+                    "number_pages" : "",
+                    "weight" : 0,
+                    "cover_price" : 0,
+                    "sales_price" : 0,
+                    "lowest_price" : 0,
+                    "price" : 0,
+                    "product_length" : 0,
+                    "product_width" : 0,
+                    "product_height" : 0,
+                    "isbn" : "",
+                    "box_length" : 0,
+                    "box_width" : 0,
+                    "box_height" : 0,
+                    "box_barcode" : "",
+                    "memo" : "",
+                    "old_digiwin_no" : "",
+                    "pare_product_no" : "",
+                    "pare_digiwin_no" : "",
+                    "pare_price" : 0,
+                    "group_name" : "",
+                    "kind_1" : "",
+                    "kind_2" : "",
+                    "kind_3" : "",
+                    "kind_4" : "",
+                    "kind_5" : "",
+                    "kind_6" : "",
+                    "kind_7" : "",
+                    "kind_8" : "",
+                    "kind_9" : "",
+                    "kind_10" : "",
+                    "kind_11" : "",
+                    "kind_12" : "",
+                    "kind_13" : "",
+                    "kind_14" : "",
+                    "kind_15" : "",
+                    "kind_16" : "",
+                    "kind_17" : "",
+                    "kind_18" : "",
+                    "kind_19" : "",
+                    "kind_20" : "",
+                    "brand_no" : "",
+                    "brand_name" : "",
+                    "brand_provider_no" : "",
+                    "brand_provider" : ""
+                  } ]
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "schema" : {
+            "type" : "string",
+            "example" : "application/json"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : {
+              "cache-control" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "no-cache, private"
+                }
+              },
+              "content-type" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "application/json"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "example" : {
+                    "code" : 0,
+                    "message" : "新增商品成功"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/orders/add_order_return" : {
+      "post" : {
+        "tags" : [ "轉單API" ],
+        "summary" : "新增訂單退貨",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "status" : {
+                    "type" : "string",
+                    "enum" : [ "return_apply", "returning", "confirm_return" ]
+                  },
+                  "datas" : {
+                    "type" : "array",
+                    "items" : {
+                      "$ref" : "#/components/schemas/ReturnOrder"
+                    }
+                  }
+                },
+                "required" : [ "status", "datas" ],
+                "example" : {
+                  "status" : "confirm_return",
+                  "datas" : [ {
+                    "order_no" : "test_order_no_1",
+                    "return_tracking_no" : "test_return_tracking_no",
+                    "product_no" : "test_product_no_1",
+                    "expiration" : 200929029,
+                    "count" : 1,
+                    "price" : 199
+                  }, {
+                    "order_no" : "test_order_no_2",
+                    "return_tracking_no" : "test_return_tracking_no",
+                    "product_no" : "test_product_no_2",
+                    "expiration" : 200929029,
+                    "count" : 1,
+                    "price" : 2000
+                  }, {
+                    "order_no" : "test_order_no_2",
+                    "return_tracking_no" : "test_return_tracking_no",
+                    "product_no" : "test_product_no_3",
+                    "expiration" : 200929029,
+                    "count" : 1,
+                    "price" : 2000
+                  } ]
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "schema" : {
+            "type" : "string",
+            "example" : "application/json"
+          }
+        } ],
+        "responses" : {
+          "500" : {
+            "description" : "Internal Server Error",
+            "headers" : {
+              "Server" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "nginx/1.24.0"
+                }
+              },
+              "Content-Type" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "application/json"
+                }
+              },
+              "Transfer-Encoding" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "chunked"
+                }
+              },
+              "Connection" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "keep-alive"
+                }
+              },
+              "Cache-Control" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "no-cache, private"
+                }
+              },
+              "Date" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "Wed, 03 Apr 2024 08:25:12 GMT"
+                }
+              },
+              "X-RateLimit-Limit" : {
+                "schema" : {
+                  "type" : "integer",
+                  "example" : "60"
+                }
+              },
+              "X-RateLimit-Remaining" : {
+                "schema" : {
+                  "type" : "integer",
+                  "example" : "59"
+                }
+              },
+              "Access-Control-Allow-Origin" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "*"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "example" : {
+                    "code" : 1,
+                    "message" : "datas 的第1個找不到此訂單『test_order_no_1』, datas 的第2個 找不到此訂單『test_order_no_2』, datas 的第3個 找不到此訂單『test_order_no_2』"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/orders/update_status" : {
+      "put" : {
+        "tags" : [ "轉單API" ],
+        "summary" : "更改訂單狀態",
+        "description" : "轉狀態限制  \n新訂單 可轉 已取消  \n保留訂單 可轉 新訂單、已取消  \n可出貨 可轉 已出貨、已取消  \n已出貨 可轉 已取消",
+        "requestBody" : {
+          "content" : {
+            "application/x-www-form-urlencoded" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "serial_no" : {
+                    "type" : "string",
+                    "description" : "訂單流水編號",
+                    "example" : "HHGOR2406453175"
+                  },
+                  "status" : {
+                    "type" : "string",
+                    "description" : "訂單狀態，有以下狀態可使用:\n- `new_order` : 新訂單\n- `ready_to_ship_order` : 可出貨\n- `pending_order` : 保留訂單\n- `shipped_order` : 已出貨\n- `cancelled_order` : 已取消\n- `completed_order` : 匯入鼎新\n- `returning` : 退貨中\n- `confirm_return` : 確認退貨",
+                    "enum" : [ "new_order", "ready_to_ship_order", "pending_order", "shipped_order", "cancelled_order", "completed_order", "returning", "confirm_return" ],
+                    "example" : "shipped_order"
+                  },
+                  "order_transport_no" : {
+                    "type" : "string",
+                    "description" : "可出貨訂單轉為已出貨時為必填，整筆訂單為同一個託運單號"
+                  }
+                },
+                "required" : [ "serial_no", "status" ]
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "schema" : {
+            "type" : "string",
+            "example" : "application/json"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "example" : {
+                    "code" : 0,
+                    "message" : "訂單狀態更新成功"
+                  }
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "headers" : {
+              "Server" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "nginx/1.25.4"
+                }
+              },
+              "Content-Type" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "application/json"
+                }
+              },
+              "Transfer-Encoding" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "chunked"
+                }
+              },
+              "Connection" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "keep-alive"
+                }
+              },
+              "X-Powered-By" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "PHP/8.2.16"
+                }
+              },
+              "Cache-Control" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "no-cache, private"
+                }
+              },
+              "Date" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "Tue, 19 Mar 2024 07:20:09 GMT"
+                }
+              },
+              "X-RateLimit-Limit" : {
+                "schema" : {
+                  "type" : "integer",
+                  "example" : "60"
+                }
+              },
+              "X-RateLimit-Remaining" : {
+                "schema" : {
+                  "type" : "integer",
+                  "example" : "59"
+                }
+              },
+              "Access-Control-Allow-Origin" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "*"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object"
+                },
+                "example" : {
+                  "code" : 1,
+                  "message" : "新訂單只能轉為已取消"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/product/get_item" : {
+      "get" : {
+        "tags" : [ "轉單API" ],
+        "summary" : "查詢商品",
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
+          "name" : "item_sku",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "CUP-STARWAT-FG"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : {
+              "Server" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "nginx/1.24.0"
+                }
+              },
+              "Content-Type" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "application/json"
+                }
+              },
+              "Transfer-Encoding" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "chunked"
+                }
+              },
+              "Connection" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "keep-alive"
+                }
+              },
+              "Cache-Control" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "no-cache, private"
+                }
+              },
+              "Date" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "Thu, 28 Mar 2024 08:09:40 GMT"
+                }
+              },
+              "X-RateLimit-Limit" : {
+                "schema" : {
+                  "type" : "integer",
+                  "example" : "60"
+                }
+              },
+              "X-RateLimit-Remaining" : {
+                "schema" : {
+                  "type" : "integer",
+                  "example" : "59"
+                }
+              },
+              "Access-Control-Allow-Origin" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "*"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object"
+                },
+                "example" : {
+                  "code" : 0,
+                  "data" : [ {
+                    "product_id" : 154362,
+                    "product_type" : "最新資訊",
+                    "product_no" : "14007029",
+                    "digiwin_no" : "H10108000008",
+                    "product_name" : "白蘭氏 保捷膠原錠 10錠",
+                    "expiration" : "24個月",
+                    "unit" : "個",
+                    "box_count" : 128,
+                    "brand_name" : "白蘭氏",
+                    "brand_code" : "BRAND'S",
+                    "brand_expiration_per" : 0,
+                    "supplier" : "三得利",
+                    "supplier_code" : "H10108",
+                    "sales_price" : 530,
+                    "promotion_price" : null,
+                    "lowest_price" : null,
+                    "purchase_price" : 530,
+                    "box_barcode" : "14007029-1",
+                    "isbn" : "4710777900194",
+                    "memo" : null,
+                    "old_digiwin_no" : null,
+                    "pare_product_no" : null,
+                    "pare_digiwin_no" : null,
+                    "pare_price" : 0,
+                    "number_pages" : null,
+                    "weight" : null,
+                    "kind_1" : "腳",
+                    "kind_2" : "AM",
+                    "kind_3" : null,
+                    "kind_4" : null,
+                    "kind_5" : null,
+                    "kind_6" : null,
+                    "kind_7" : null,
+                    "kind_8" : null,
+                    "kind_9" : null,
+                    "kind_10" : null,
+                    "kind_11" : null,
+                    "kind_12" : null,
+                    "kind_13" : null,
+                    "kind_14" : null,
+                    "kind_15" : null,
+                    "kind_16" : null,
+                    "kind_17" : null,
+                    "kind_18" : null,
+                    "kind_19" : null,
+                    "kind_20" : null,
+                    "product_length" : "8.8",
+                    "product_width" : "2",
+                    "product_height" : "19",
+                    "box_length" : "8.8",
+                    "box_width" : "2",
+                    "box_height" : "19",
+                    "place_of_origin" : "0",
+                    "warranty_period" : null,
+                    "product_brief" : "白蘭氏官方直營",
+                    "product_description" : "1公分小錠，迷你好吞嚥\n比葡萄糖胺更好的UC-ll®\n通過458項檢測，品質最安心",
+                    "product_variant" : "10錠/盒",
+                    "return_exclusions" : null,
+                    "created_at" : "2024-03-12 15:49:30",
+                    "updated_at" : "2024-03-19 18:13:34"
+                  } ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/orders/get_orderlist" : {
+      "get" : {
+        "tags" : [ "轉單API" ],
+        "summary" : "查詢訂單",
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
+          "name" : "order_status",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "訂單狀態，必填， 必須為 new_order, ready_to_ship_order, pending_order, shipped_order, cancelled_order, completed_order, return_apply_order, returning_order, returned_order",
+          "example" : "ready_to_ship_order"
+        }, {
+          "name" : "current_page",
+          "in" : "query",
+          "schema" : {
+            "type" : "integer"
+          },
+          "description" : "頁數，非必填，預設為0 ， 從1開始必須是整數且最小值為0",
+          "example" : 1
+        }, {
+          "name" : "per_page",
+          "in" : "query",
+          "schema" : {
+            "type" : "integer"
+          },
+          "description" : "每頁取得數量，非必填，預設為10，最大值為100",
+          "example" : 5
+        }, {
+          "name" : "time_range_field",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "time_from 和 time_to 的類型，必填，可用值：created_at、default_created_at。\ncreated_at 是 轉單系統建立訂單時間\ndefault_created_at 是 平台訂單建立時間",
+          "example" : "created_at"
+        }, {
+          "name" : "time_from",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "開始時間，必填，格式必須為 \"Y-m-d H:i:s\"",
+          "example" : "2024-01-01 00:00:00"
+        }, {
+          "name" : "time_to",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "結束時間，必填，格式必須為 \"Y-m-d H:i:s\"，並且結束時間需大於等於開始時間",
+          "example" : "2024-02-01 00:00:00"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : {
+              "Server" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "nginx/1.25.4"
+                }
+              },
+              "Content-Type" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "application/json"
+                }
+              },
+              "Transfer-Encoding" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "chunked"
+                }
+              },
+              "Connection" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "keep-alive"
+                }
+              },
+              "Vary" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "Accept-Encoding"
+                }
+              },
+              "X-Powered-By" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "PHP/8.2.16"
+                }
+              },
+              "Cache-Control" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "no-cache, private"
+                }
+              },
+              "Date" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "Tue, 19 Mar 2024 07:18:35 GMT"
+                }
+              },
+              "X-RateLimit-Limit" : {
+                "schema" : {
+                  "type" : "integer",
+                  "example" : "60"
+                }
+              },
+              "X-RateLimit-Remaining" : {
+                "schema" : {
+                  "type" : "integer",
+                  "example" : "59"
+                }
+              },
+              "Access-Control-Allow-Origin" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "*"
+                }
+              },
+              "Content-Encoding" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "gzip"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object"
+                },
+                "example" : {
+                  "code" : 0,
+                  "status" : "ready_to_ship_order",
+                  "data" : [ {
+                    "order_id" : 20,
+                    "customer" : "蝦皮-花王",
+                    "serial_no" : "HHGOR2403425848",
+                    "receive_name" : null,
+                    "receive_address" : null,
+                    "receive_phone" : null,
+                    "created_at" : "2024-03-19 13:25:26",
+                    "default_created_at" : "2024-03-16 23:40:00",
+                    "consignment_number" : "",
+                    "error_message" : "",
+                    "order_detail" : [ {
+                      "order_no" : "2403168T139T2V",
+                      "is_except_deduct" : false,
+                      "product_name" : "一匙靈抗菌EX超濃縮洗衣粉 補充包1.5KG",
+                      "product_no" : "205908",
+                      "expiration" : "20261012",
+                      "warehouse_type" : "U",
+                      "count" : 6,
+                      "sales_price" : 513,
+                      "deduct_memo" : "正常"
+                    }, {
+                      "order_no" : "2403168T139T2V",
+                      "is_except_deduct" : false,
+                      "product_name" : "魔術靈浴室清潔劑 舒適檸檬 量販瓶3800ML",
+                      "product_no" : "295987",
+                      "expiration" : "20261017",
+                      "warehouse_type" : "U",
+                      "count" : 1,
+                      "sales_price" : 191,
+                      "deduct_memo" : "正常"
+                    } ]
+                  } ],
+                  "meta" : {
+                    "total" : 1,
+                    "per_page" : 5,
+                    "current_page" : 1,
+                    "last_page" : 1,
+                    "has_more" : false
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/orders/get_orderstatus" : {
+      "get" : {
+        "tags" : [ "轉單API" ],
+        "summary" : "查詢訂單狀態",
+        "description" : "order_no 與 serial_no 至少填寫一個  \n狀態對照\n\n1\\. 新訂單 : new_order\n\n2\\. 可出貨 : ready_to_ship_order\n\n3\\. 不可出貨 : pending_order\n\n4\\. 已出貨 : shipped_order\n\n5\\. 取消 : cancelled_order\n\n6\\. 匯入鼎新 : completed_order\n\n7\\. 退貨申請 : return_apply_order\n\n8\\. 退貨中 : returning_order\n\n9\\. 已退貨 : returned_order",
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
+          "name" : "order_no",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "平台訂單編號",
+          "example" : "2403141DKWVK1U"
+        }, {
+          "name" : "serial_no",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "訂單流水編號",
+          "example" : "HHGOR2403425829"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : {
+              "Server" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "nginx/1.25.4"
+                }
+              },
+              "Content-Type" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "application/json"
+                }
+              },
+              "Transfer-Encoding" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "chunked"
+                }
+              },
+              "Connection" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "keep-alive"
+                }
+              },
+              "Vary" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "Accept-Encoding"
+                }
+              },
+              "X-Powered-By" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "PHP/8.2.16"
+                }
+              },
+              "Cache-Control" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "no-cache, private"
+                }
+              },
+              "Date" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "Tue, 19 Mar 2024 07:17:17 GMT"
+                }
+              },
+              "X-RateLimit-Limit" : {
+                "schema" : {
+                  "type" : "integer",
+                  "example" : "60"
+                }
+              },
+              "X-RateLimit-Remaining" : {
+                "schema" : {
+                  "type" : "integer",
+                  "example" : "58"
+                }
+              },
+              "Access-Control-Allow-Origin" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "*"
+                }
+              },
+              "Content-Encoding" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "gzip"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object"
+                },
+                "example" : {
+                  "code" : 0,
+                  "message" : "查詢成功",
+                  "serial_no" : "HHGOR2403425829",
+                  "is_except_deduct" : false,
+                  "order_status" : "new_order",
+                  "return_status" : ""
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/orders/add_order" : {
+      "post" : {
+        "tags" : [ "轉單API" ],
+        "summary" : "新增訂單",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "file_name" : {
+                    "type" : "string",
+                    "example" : "通用-生活市集.xls",
+                    "description" : "檔案名稱"
+                  },
+                  "datas" : {
+                    "type" : "array",
+                    "items" : {
+                      "$ref" : "#/components/schemas/OrderItem"
+                    },
+                    "description" : "訂單資料"
+                  }
+                },
+                "required" : [ "file_name", "datas" ]
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : {
+              "Server" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "nginx/1.25.4"
+                }
+              },
+              "Content-Type" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "application/json"
+                }
+              },
+              "Transfer-Encoding" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "chunked"
+                }
+              },
+              "Connection" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "keep-alive"
+                }
+              },
+              "Vary" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "Accept-Encoding"
+                }
+              },
+              "X-Powered-By" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "PHP/8.2.16"
+                }
+              },
+              "Cache-Control" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "no-cache, private"
+                }
+              },
+              "Date" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "Tue, 19 Mar 2024 07:21:37 GMT"
+                }
+              },
+              "X-RateLimit-Limit" : {
+                "schema" : {
+                  "type" : "integer",
+                  "example" : "60"
+                }
+              },
+              "X-RateLimit-Remaining" : {
+                "schema" : {
+                  "type" : "integer",
+                  "example" : "59"
+                }
+              },
+              "Access-Control-Allow-Origin" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "*"
+                }
+              },
+              "Content-Encoding" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "gzip"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object"
+                },
+                "example" : {
+                  "code" : 0,
+                  "message" : "新增訂單成功",
+                  "repeat_order_no" : [ ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/stock/update_stock" : {
+      "post" : {
+        "tags" : [ "轉單API" ],
+        "summary" : "匯入庫存",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "length" : {
+                    "type" : "integer",
+                    "example" : 22
+                  },
+                  "datas" : {
+                    "type" : "array",
+                    "items" : {
+                      "$ref" : "#/components/schemas/StockData"
+                    }
+                  }
+                },
+                "required" : [ "length", "datas" ],
+                "example" : {
+                  "length" : 2,
+                  "datas" : [ {
+                    "warehouse_no" : "VIRU",
+                    "product_no" : "706456451181",
+                    "expiration" : "29990101",
+                    "product_name" : "A- SS SLM INSTT LG T Ck Black, S,",
+                    "quantity" : 100,
+                    "replace" : true
+                  }, {
+                    "warehouse_no" : "VIRU",
+                    "product_no" : "706456451198",
+                    "expiration" : "29990101",
+                    "product_name" : "A- SS SLM INSTT LG T Ck Black, M,",
+                    "quantity" : 100,
+                    "replace" : true
+                  } ]
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "headers" : {
+              "Server" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "nginx/1.26.1"
+                }
+              },
+              "Content-Type" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "application/json"
+                }
+              },
+              "Transfer-Encoding" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "chunked"
+                }
+              },
+              "Connection" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "keep-alive"
+                }
+              },
+              "Cache-Control" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "no-cache, private"
+                }
+              },
+              "Date" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "Tue, 23 Jul 2024 04:02:58 GMT"
+                }
+              },
+              "X-RateLimit-Limit" : {
+                "schema" : {
+                  "type" : "integer",
+                  "example" : "60"
+                }
+              },
+              "X-RateLimit-Remaining" : {
+                "schema" : {
+                  "type" : "integer",
+                  "example" : "59"
+                }
+              },
+              "Access-Control-Allow-Origin" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "*"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "example" : 0
+                    },
+                    "message" : {
+                      "type" : "string",
+                      "example" : "更新庫存成功"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
