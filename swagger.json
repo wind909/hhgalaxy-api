@@ -341,11 +341,6 @@
             "example" : "B01082",
             "description" : "客戶代碼"
           },
-          "original_item_sku" : {
-            "type" : "string",
-            "example" : "9781234567890",
-            "description" : "原始商品 SKU"
-          },
           "custom_column_1" : {
             "type" : "string",
             "example" : "Custom 1",
@@ -443,7 +438,7 @@
             "description" : "運費"
           }
         },
-        "required" : [ "delivery_number", "trans_amount", "product_code", "item_title", "quantity", "recipient", "recipient_address", "recipient_phone", "original_item_sku" ]
+        "required" : [ "delivery_number", "trans_amount", "product_code", "item_title", "quantity", "recipient", "recipient_address", "recipient_phone" ]
       },
       "StockData" : {
         "type" : "object",
@@ -1482,11 +1477,6 @@
                     "example" : "B01082",
                     "description" : "客戶代碼"
                   },
-                  "datas[0][original_item_sku]" : {
-                    "type" : "string",
-                    "example" : "9781234567890",
-                    "description" : "原始商品 SKU"
-                  },
                   "datas[0][is_cvs]" : {
                     "type" : "boolean",
                     "example" : true,
@@ -1583,7 +1573,7 @@
                     "description" : "運費"
                   }
                 },
-                "required" : [ "file_name", "datas[0][item_title]", "datas[0][delivery_number]", "datas[0][original_item_sku]", "datas[0][product_code]", "datas[0][quantity]", "datas[0][recipient]", "datas[0][recipient_address]", "datas[0][recipient_phone]", "datas[0][trans_amount]" ],
+                "required" : [ "file_name", "datas[0][item_title]", "datas[0][delivery_number]", "datas[0][product_code]", "datas[0][quantity]", "datas[0][recipient]", "datas[0][recipient_address]", "datas[0][recipient_phone]", "datas[0][trans_amount]" ],
                 "example" : {
                   "file_name" : "通用-生活市集.xls",
                   "datas[0][update_datetime]" : "20240312",
@@ -1603,7 +1593,6 @@
                   "datas[0][payment_amount]" : 123.45,
                   "datas[0][memo]" : "Sample Memo",
                   "datas[0][client_code]" : "B01082",
-                  "datas[0][original_item_sku]" : "9781234567890",
                   "datas[0][custom_column_1]" : "Custom 1",
                   "datas[0][custom_column_2]" : "Custom 2",
                   "datas[0][custom_column_3]" : "Custom 3",
