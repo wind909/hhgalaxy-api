@@ -1593,7 +1593,7 @@
                     "description" : "運費"
                   }
                 },
-                "required" : [ "file_name", "datas[0][customer_code]", "datas[0][customer_name]", "datas[0][is_cvs]", "datas[0][item_id]", "datas[0][item_title]", "datas[0][order_number]", "datas[0][original_item_sku]", "datas[0][product_code]", "datas[0][quantity]", "datas[0][recipient]", "datas[0][recipient_address]", "datas[0][recipient_phone]", "datas[0][trans_amount]", "datas[0][update_datetime]" ],
+                "required" : [ "file_name", "datas[0][customer_code]", "datas[0][customer_name]", "datas[0][item_title]", "datas[0][order_number]", "datas[0][original_item_sku]", "datas[0][product_code]", "datas[0][quantity]", "datas[0][recipient]", "datas[0][recipient_address]", "datas[0][recipient_phone]", "datas[0][trans_amount]", "datas[0][update_datetime]" ],
                 "example" : {
                   "file_name" : "通用-生活市集.xls",
                   "datas[0][update_datetime]" : "20240312",
