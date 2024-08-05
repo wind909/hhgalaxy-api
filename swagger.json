@@ -300,11 +300,6 @@
             "example" : "123e4567-e89b-12d3-a456-426614174000",
             "description" : "配送編號"
           },
-          "customer_code" : {
-            "type" : "string",
-            "example" : "123e4567-e89b-12d3-a456-426614174000",
-            "description" : "顧客代碼"
-          },
           "customer_name" : {
             "type" : "string",
             "example" : "John Doe",
@@ -350,11 +345,6 @@
             "type" : "string",
             "example" : "9781234567890",
             "description" : "原始商品 SKU"
-          },
-          "is_cvs" : {
-            "type" : "boolean",
-            "example" : true,
-            "description" : "是否為 CVS"
           },
           "custom_column_1" : {
             "type" : "string",
@@ -453,7 +443,7 @@
             "description" : "運費"
           }
         },
-        "required" : [ "update_datetime", "order_number", "trans_amount", "product_code", "item_title", "quantity", "customer_code", "customer_name", "recipient", "recipient_address", "recipient_phone", "original_item_sku", "is_cvs", "item_id" ]
+        "required" : [ "update_datetime", "order_number", "trans_amount", "product_code", "item_title", "quantity", "customer_name", "recipient", "recipient_address", "recipient_phone", "original_item_sku" ]
       },
       "StockData" : {
         "type" : "object",
@@ -1593,7 +1583,7 @@
                     "description" : "運費"
                   }
                 },
-                "required" : [ "file_name", "datas[0][customer_code]", "datas[0][customer_name]", "datas[0][item_title]", "datas[0][order_number]", "datas[0][original_item_sku]", "datas[0][product_code]", "datas[0][quantity]", "datas[0][recipient]", "datas[0][recipient_address]", "datas[0][recipient_phone]", "datas[0][trans_amount]", "datas[0][update_datetime]" ],
+                "required" : [ "file_name", "datas[0][customer_name]", "datas[0][item_title]", "datas[0][order_number]", "datas[0][original_item_sku]", "datas[0][product_code]", "datas[0][quantity]", "datas[0][recipient]", "datas[0][recipient_address]", "datas[0][recipient_phone]", "datas[0][trans_amount]", "datas[0][update_datetime]" ],
                 "example" : {
                   "file_name" : "通用-生活市集.xls",
                   "datas[0][update_datetime]" : "20240312",
@@ -1605,7 +1595,6 @@
                   "datas[0][item_title]" : "Sample Item",
                   "datas[0][quantity]" : 1,
                   "datas[0][delivery_number]" : "123e4567-e89b-12d3-a456-426614174000",
-                  "datas[0][customer_code]" : "123e4567-e89b-12d3-a456-426614174000",
                   "datas[0][customer_name]" : "John Doe",
                   "datas[0][recipient]" : "Jane Doe",
                   "datas[0][recipient_address]" : "123 Main St, Anytown",
@@ -1615,7 +1604,6 @@
                   "datas[0][memo]" : "Sample Memo",
                   "datas[0][client_code]" : "B01082",
                   "datas[0][original_item_sku]" : "9781234567890",
-                  "datas[0][is_cvs]" : true,
                   "datas[0][custom_column_1]" : "Custom 1",
                   "datas[0][custom_column_2]" : "Custom 2",
                   "datas[0][custom_column_3]" : "Custom 3",
