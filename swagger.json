@@ -1393,6 +1393,250 @@
         "summary" : "新增訂單",
         "requestBody" : {
           "content" : {
+            "application/x-www-form-urlencoded" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "file_name" : {
+                    "type" : "string",
+                    "example" : "通用-生活市集.xls",
+                    "description" : "檔案名稱"
+                  },
+                  "datas[0][update_datetime]" : {
+                    "type" : "string",
+                    "example" : "20240312",
+                    "description" : "更新日期"
+                  },
+                  "datas[0][ship_by_date]" : {
+                    "type" : "string",
+                    "example" : "20240312",
+                    "description" : "發貨日期"
+                  },
+                  "datas[0][expiration_date]" : {
+                    "type" : "string",
+                    "example" : "20240312",
+                    "description" : "到期日"
+                  },
+                  "datas[0][order_number]" : {
+                    "type" : "string",
+                    "example" : "123e4567-e89b-12d3-a456-426614174000",
+                    "description" : "訂單號"
+                  },
+                  "datas[0][trans_amount]" : {
+                    "type" : "number",
+                    "example" : 123.45,
+                    "description" : "交易金額"
+                  },
+                  "datas[0][product_code]" : {
+                    "type" : "string",
+                    "example" : "9781234567890",
+                    "description" : "產品代碼"
+                  },
+                  "datas[0][item_title]" : {
+                    "type" : "string",
+                    "example" : "Sample Item",
+                    "description" : "商品標題"
+                  },
+                  "datas[0][quantity]" : {
+                    "type" : "integer",
+                    "example" : 1,
+                    "description" : "數量"
+                  },
+                  "datas[0][delivery_number]" : {
+                    "type" : "string",
+                    "example" : "123e4567-e89b-12d3-a456-426614174000",
+                    "description" : "配送編號"
+                  },
+                  "datas[0][customer_code]" : {
+                    "type" : "string",
+                    "example" : "123e4567-e89b-12d3-a456-426614174000",
+                    "description" : "客戶代碼"
+                  },
+                  "datas[0][customer_name]" : {
+                    "type" : "string",
+                    "example" : "John Doe",
+                    "description" : "客戶名稱"
+                  },
+                  "datas[0][recipient]" : {
+                    "type" : "string",
+                    "example" : "Jane Doe",
+                    "description" : "收件人"
+                  },
+                  "datas[0][recipient_address]" : {
+                    "type" : "string",
+                    "example" : "123 Main St, Anytown",
+                    "description" : "收件地址"
+                  },
+                  "datas[0][recipient_phone]" : {
+                    "type" : "string",
+                    "example" : "123-456-7890",
+                    "description" : "收件人電話"
+                  },
+                  "datas[0][payment_type]" : {
+                    "type" : "string",
+                    "example" : "credit_card",
+                    "description" : "支付類型"
+                  },
+                  "datas[0][payment_amount]" : {
+                    "type" : "number",
+                    "example" : 123.45,
+                    "description" : "支付金額"
+                  },
+                  "datas[0][memo]" : {
+                    "type" : "string",
+                    "example" : "Sample Memo",
+                    "description" : "備註"
+                  },
+                  "datas[0][client_code]" : {
+                    "type" : "string",
+                    "example" : "B01082",
+                    "description" : "客戶代碼"
+                  },
+                  "datas[0][original_item_sku]" : {
+                    "type" : "string",
+                    "example" : "9781234567890",
+                    "description" : "原始商品 SKU"
+                  },
+                  "datas[0][is_cvs]" : {
+                    "type" : "boolean",
+                    "example" : true,
+                    "description" : "是否 CVS"
+                  },
+                  "datas[0][custom_column_1]" : {
+                    "type" : "string",
+                    "example" : "Custom 1",
+                    "description" : "自定義欄 1"
+                  },
+                  "datas[0][custom_column_2]" : {
+                    "type" : "string",
+                    "example" : "Custom 2",
+                    "description" : "自定義欄 2"
+                  },
+                  "datas[0][custom_column_3]" : {
+                    "type" : "string",
+                    "example" : "Custom 3",
+                    "description" : "自定義欄 3"
+                  },
+                  "datas[0][custom_column_4]" : {
+                    "type" : "string",
+                    "example" : "Custom 4",
+                    "description" : "自定義欄 4"
+                  },
+                  "datas[0][custom_column_5]" : {
+                    "type" : "string",
+                    "example" : "Custom 5",
+                    "description" : "自定義欄 5"
+                  },
+                  "datas[0][custom_column_6]" : {
+                    "type" : "string",
+                    "example" : "Custom 6",
+                    "description" : "自定義欄 6"
+                  },
+                  "datas[0][custom_column_7]" : {
+                    "type" : "string",
+                    "example" : "Custom 7",
+                    "description" : "自定義欄 7"
+                  },
+                  "datas[0][custom_column_8]" : {
+                    "type" : "string",
+                    "example" : "Custom 8",
+                    "description" : "自定義欄 8"
+                  },
+                  "datas[0][custom_column_9]" : {
+                    "type" : "string",
+                    "example" : "Custom 9",
+                    "description" : "自定義欄 9"
+                  },
+                  "datas[0][custom_column_10]" : {
+                    "type" : "string",
+                    "example" : "Custom 10",
+                    "description" : "自定義欄 10"
+                  },
+                  "datas[0][item_id]" : {
+                    "type" : "string",
+                    "example" : "123e4567-e89b-12d3-a456-426614174000",
+                    "description" : "商品 ID"
+                  },
+                  "datas[0][item_cost]" : {
+                    "type" : "number",
+                    "example" : 50,
+                    "description" : "商品成本"
+                  },
+                  "datas[0][item_pricesales]" : {
+                    "type" : "number",
+                    "example" : 100,
+                    "description" : "商品售價"
+                  },
+                  "datas[0][order_totalpayment]" : {
+                    "type" : "number",
+                    "example" : 123.45,
+                    "description" : "訂單總支付"
+                  },
+                  "datas[0][user_id]" : {
+                    "type" : "string",
+                    "example" : "123e4567-e89b-12d3-a456-426614174000",
+                    "description" : "用戶 ID"
+                  },
+                  "datas[0][virtual_contact_number]" : {
+                    "type" : "string",
+                    "example" : "Virtual Contact Number",
+                    "description" : "虛擬聯絡號"
+                  },
+                  "datas[0][package_query_number]" : {
+                    "type" : "string",
+                    "example" : "Package Query Number",
+                    "description" : "包裹查詢號"
+                  },
+                  "datas[0][shipment_fee]" : {
+                    "type" : "number",
+                    "example" : 10,
+                    "description" : "運費"
+                  }
+                },
+                "required" : [ "file_name", "datas" ],
+                "example" : {
+                  "file_name" : "通用-生活市集.xls",
+                  "datas[0][update_datetime]" : "20240312",
+                  "datas[0][ship_by_date]" : "20240312",
+                  "datas[0][expiration_date]" : "20240312",
+                  "datas[0][order_number]" : "123e4567-e89b-12d3-a456-426614174000",
+                  "datas[0][trans_amount]" : 123.45,
+                  "datas[0][product_code]" : "9781234567890",
+                  "datas[0][item_title]" : "Sample Item",
+                  "datas[0][quantity]" : 1,
+                  "datas[0][delivery_number]" : "123e4567-e89b-12d3-a456-426614174000",
+                  "datas[0][customer_code]" : "123e4567-e89b-12d3-a456-426614174000",
+                  "datas[0][customer_name]" : "John Doe",
+                  "datas[0][recipient]" : "Jane Doe",
+                  "datas[0][recipient_address]" : "123 Main St, Anytown",
+                  "datas[0][recipient_phone]" : "123-456-7890",
+                  "datas[0][payment_type]" : "credit_card",
+                  "datas[0][payment_amount]" : 123.45,
+                  "datas[0][memo]" : "Sample Memo",
+                  "datas[0][client_code]" : "B01082",
+                  "datas[0][original_item_sku]" : "9781234567890",
+                  "datas[0][is_cvs]" : true,
+                  "datas[0][custom_column_1]" : "Custom 1",
+                  "datas[0][custom_column_2]" : "Custom 2",
+                  "datas[0][custom_column_3]" : "Custom 3",
+                  "datas[0][custom_column_4]" : "Custom 4",
+                  "datas[0][custom_column_5]" : "Custom 5",
+                  "datas[0][custom_column_6]" : "Custom 6",
+                  "datas[0][custom_column_7]" : "Custom 7",
+                  "datas[0][custom_column_8]" : "Custom 8",
+                  "datas[0][custom_column_9]" : "Custom 9",
+                  "datas[0][custom_column_10]" : "Custom 10",
+                  "datas[0][item_id]" : "123e4567-e89b-12d3-a456-426614174000",
+                  "datas[0][item_cost]" : 50,
+                  "datas[0][item_pricesales]" : 100,
+                  "datas[0][order_totalpayment]" : 123.45,
+                  "datas[0][user_id]" : "123e4567-e89b-12d3-a456-426614174000",
+                  "datas[0][virtual_contact_number]" : "Virtual Contact Number",
+                  "datas[0][package_query_number]" : "Package Query Number",
+                  "datas[0][shipment_fee]" : 10
+                }
+              }
+            },
             "application/json" : {
               "schema" : {
                 "type" : "object",
@@ -1506,12 +1750,24 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "type" : "object"
-                },
-                "example" : {
-                  "code" : 0,
-                  "message" : "新增訂單成功",
-                  "repeat_order_no" : [ ]
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "example" : 0
+                    },
+                    "message" : {
+                      "type" : "string",
+                      "example" : "新增訂單成功"
+                    },
+                    "repeat_order_no" : {
+                      "type" : "array",
+                      "items" : {
+                        "type" : "string"
+                      },
+                      "example" : [ ]
+                    }
+                  }
                 }
               }
             }
