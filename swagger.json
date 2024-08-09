@@ -574,17 +574,18 @@
             "type" : "string",
             "example" : "application/json"
           }
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "schema" : {
+            "type" : "string",
+            "example" : "Bearer 48|aq134EnXWqA8iiTgE6YnKAZhLKu3ZxZOLxLPncmF51026aa9"
+          }
         } ],
         "responses" : {
           "200" : {
             "description" : "OK",
             "headers" : {
-              "Authorization" : {
-                "schema" : {
-                  "type" : "string",
-                  "example" : "Bearer 48|aq134EnXWqA8iiTgE6YnKAZhLKu3ZxZOLxLPncmF51026aa9"
-                }
-              },
               "cache-control" : {
                 "schema" : {
                   "type" : "string",
@@ -731,6 +732,13 @@
             "type" : "string",
             "example" : "application/json"
           }
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "schema" : {
+            "type" : "string",
+            "example" : "Bearer 48|aq134EnXWqA8iiTgE6YnKAZhLKu3ZxZOLxLPncmF51026aa9"
+          }
         } ],
         "responses" : {
           "500" : {
@@ -848,6 +856,13 @@
             "type" : "string",
             "example" : "application/json"
           }
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "schema" : {
+            "type" : "string",
+            "example" : "Bearer 48|aq134EnXWqA8iiTgE6YnKAZhLKu3ZxZOLxLPncmF51026aa9"
+          }
         } ],
         "responses" : {
           "200" : {
@@ -957,6 +972,13 @@
             "type" : "string"
           },
           "example" : "application/json"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "schema" : {
+            "type" : "string",
+            "example" : "Bearer 48|aq134EnXWqA8iiTgE6YnKAZhLKu3ZxZOLxLPncmF51026aa9"
+          }
         }, {
           "name" : "item_sku",
           "in" : "query",
@@ -1115,6 +1137,13 @@
             "type" : "string"
           },
           "example" : "application/json"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "schema" : {
+            "type" : "string",
+            "example" : "Bearer 48|aq134EnXWqA8iiTgE6YnKAZhLKu3ZxZOLxLPncmF51026aa9"
+          }
         }, {
           "name" : "order_status",
           "in" : "query",
@@ -1315,6 +1344,13 @@
             "type" : "string"
           },
           "example" : "application/json"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "schema" : {
+            "type" : "string",
+            "example" : "Bearer 48|aq134EnXWqA8iiTgE6YnKAZhLKu3ZxZOLxLPncmF51026aa9"
+          }
         }, {
           "name" : "order_no",
           "in" : "query",
@@ -1680,6 +1716,13 @@
             "type" : "string"
           },
           "example" : "application/json"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "schema" : {
+            "type" : "string",
+            "example" : "Bearer 48|aq134EnXWqA8iiTgE6YnKAZhLKu3ZxZOLxLPncmF51026aa9"
+          }
         } ],
         "responses" : {
           "200" : {
