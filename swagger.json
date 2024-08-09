@@ -579,6 +579,12 @@
           "200" : {
             "description" : "OK",
             "headers" : {
+              "Authorization" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "Bearer 48|aq134EnXWqA8iiTgE6YnKAZhLKu3ZxZOLxLPncmF51026aa9"
+                }
+              },
               "cache-control" : {
                 "schema" : {
                   "type" : "string",
