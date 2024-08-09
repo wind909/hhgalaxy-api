@@ -579,7 +579,7 @@
           "in" : "header",
           "schema" : {
             "type" : "string",
-            "example" : "Bearer 48|aq134EnXWqA8iiTgE6YnKAZhLKu3ZxZOLxLPncmF51026aa9"
+            "example" : "Bearer {token}"
           }
         } ],
         "responses" : {
@@ -737,7 +737,7 @@
           "in" : "header",
           "schema" : {
             "type" : "string",
-            "example" : "Bearer 48|aq134EnXWqA8iiTgE6YnKAZhLKu3ZxZOLxLPncmF51026aa9"
+            "example" : "Bearer {token}"
           }
         } ],
         "responses" : {
@@ -861,7 +861,7 @@
           "in" : "header",
           "schema" : {
             "type" : "string",
-            "example" : "Bearer 48|aq134EnXWqA8iiTgE6YnKAZhLKu3ZxZOLxLPncmF51026aa9"
+            "example" : "Bearer {token}"
           }
         } ],
         "responses" : {
@@ -977,7 +977,7 @@
           "in" : "header",
           "schema" : {
             "type" : "string",
-            "example" : "Bearer 48|aq134EnXWqA8iiTgE6YnKAZhLKu3ZxZOLxLPncmF51026aa9"
+            "example" : "Bearer {token}"
           }
         }, {
           "name" : "item_sku",
@@ -1142,7 +1142,7 @@
           "in" : "header",
           "schema" : {
             "type" : "string",
-            "example" : "Bearer 48|aq134EnXWqA8iiTgE6YnKAZhLKu3ZxZOLxLPncmF51026aa9"
+            "example" : "Bearer {token}"
           }
         }, {
           "name" : "order_status",
@@ -1349,7 +1349,7 @@
           "in" : "header",
           "schema" : {
             "type" : "string",
-            "example" : "Bearer 48|aq134EnXWqA8iiTgE6YnKAZhLKu3ZxZOLxLPncmF51026aa9"
+            "example" : "Bearer {token}"
           }
         }, {
           "name" : "order_no",
@@ -1721,7 +1721,7 @@
           "in" : "header",
           "schema" : {
             "type" : "string",
-            "example" : "Bearer 48|aq134EnXWqA8iiTgE6YnKAZhLKu3ZxZOLxLPncmF51026aa9"
+            "example" : "Bearer {token}"
           }
         } ],
         "responses" : {
